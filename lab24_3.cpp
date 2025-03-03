@@ -1,4 +1,17 @@
-#include<iostream>
+int count(int data[], int size){
+	bool check[100] = {false};
+	int sum = 0;
+	for(int i = 0; i < size; i++){
+		if(!check[data[i]]){
+			check[data[i]] = true;
+			sum++;
+		}
+		else{
+			continue;
+		}
+	}
+	return sum;
+}#include<iostream>
 
 using namespace std;
 
