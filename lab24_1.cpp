@@ -64,3 +64,21 @@ void List::append(int d){
 }
 
 //Write List::remove() here
+void List::remove(int index){
+	Node *pre = root;
+	Node *cur = pre -> next;
+	if(index == 0){
+		cout << pre -> data << " was deleted." << endl;
+		root = cur;
+		pre -> next = NULL;
+	}
+	else{
+		for(int i = 0; i < index - 1; i++){
+			pre = cur;
+			cur = pre -> next;
+		}
+		cout << cur -> data << " was deleted." << endl;
+		pre -> next = cur -> next;
+		cur -> next = NULL;
+	}
+}
